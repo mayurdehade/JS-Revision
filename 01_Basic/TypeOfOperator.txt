@@ -1,0 +1,21 @@
+* The typeof Operator
+* The production UnaryExpression : typeof UnaryExpression is evaluated as follows
+
+* Let val be the result of evaluating UnaryExpression.
+* If Type(val) is Reference, then
+* If IsUnresolvableReference(val) is true, return "undefined".
+* Let val be GetValue(val).
+* Return a String determined by Type(val) according to Table 20.
+* Table 20 — typeof Operator Results
+
+
+* Type of val	Result
+* Undefined	"undefined"
+* Null	"object"
+* Boolean	"boolean"
+* Number	"number"
+* String	"string"
+* Object (native and does not implement [[Call]])	"object"
+* Object (native or host and does implement [[Call]])	"function"
+* Object (host and does not implement [[Call]])	Implementation-defined 
+* except may not be "undefined", "boolean", "number", or "string".
