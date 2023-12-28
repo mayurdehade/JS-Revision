@@ -14,7 +14,7 @@ function sayMyName() {
 //calling function
 sayMyName(); //no arguments
 
-//with paramets
+//with parameters
 //parameters -> passing to function
 function addTwoNumbers(number1, number2){
     console.log(number1 + number2);
