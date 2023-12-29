@@ -1,15 +1,6 @@
 //Example of a while loop
-let index = -1;
+let index;
 
-//This while loop will not executed because the condition is initially false (index <= 0)
-while(index<=0){
-    //The following line is not doing anything, as it's block with a template literal
-    //It seems like you intended to use console.log instead
-    {`value of index ${index}`}
-    index++;
-}
-
-//Corrected version with console.log
 index = 0;
 while(index <= 0){
     //Logging the value of the index
