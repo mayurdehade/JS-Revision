@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Selection Example</title>
+</head>
+<body>
+    <p id="myParagraph" class="myClass">Hello, World!</p>
+
+    <script>
+        // Get element by ID
+        let elementById = document.getElementById('myParagraph');
+        console.log(elementById.textContent);
+
+        // Get elements by class name
+        // behind the scenes the class is class name so we write class name
+        let elementsByClass = document.getElementsByClassName("myClass");
+        console.log(elementsByClass.length);
+
+        // Get elements by tag name
+        let elementByTag = document.getElementsByTagName('p');
+        console.log(elementByTag.length);
+
+        // Query selector
+        let querySelector = document.querySelector('#myParagraph');
+        console.log(querySelector.textContent);
+
+        // Query selector all
+        let querySelectorALL = document.querySelectorAll('.myClass');
+        console.log(querySelectorALL.length);
+
+    </script>
+</body>
+</html>
