@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    //create HTML element
+    const div = document.createElement('div');
+    console.log(div);
+    //set class name
+    div.className = "main";
+    //set id name
+    div.id = Math.round(Math.random()+1);
+    //set attribute give value in key value pair
+    div.setAttribute("title", "generated title");
+    //change style
+    div.style.backgroundColor = 'green';
+    div.style.padding = '12px';
+    //adding text (it override)
+    div.innerHTML = "Mayur Dehade";
+
+    //create new text node
+    const addText = document.createTextNode("Senior Programmer");
+    //add text node to div (not override)
+    div.appendChild(addText);
+
+    //insert element in body
+    document.body.appendChild(div);
+</script>
+</html>
