@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML EVENTS</title>
+</head>
+<body style="background-color: #414141;">
+    <h1>Amazing Images</h1>
+    <div>
+        <ul id="images">
+            <li><img width="200pxh" id="camera" src="https://images.pexels.com/photos/4992947/pexels-photo-4992947.jpeg?auto=compress&cs=tinysrgb&w=600" alt="camera"></li>
+            <li><img width="200px" id="pc" src="https://images.pexels.com/photos/7091926/pexels-photo-7091926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+            <li><img width="200px" id="home" src="https://images.pexels.com/photos/6707628/pexels-photo-6707628.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+            <li><img width="200px" id="flowers" src="https://images.pexels.com/photos/7676308/pexels-photo-7676308.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+            <li><img width="200px" id="mountain" src="https://images.pexels.com/photos/7459424/pexels-photo-7459424.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+            <li><a id="google" style="color: rgb(24, 243, 255);" href="https://google.com">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //adding event on li tag
+    // document.getElementById('home').onclick = function() {
+    //     alert('Home Clicked');
+    // }
+    
+    //attachEvent()
+    //jQuery - on
+
+    
+
+    //Event Object
+    // document.getElementById('home').addEventListener('click', function(e){
+    //     console.log(e);
+    // }, false);
+
+    //Type events, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //Interview - clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click', function(e) {
+    //     console.log("clicked inside the ul");
+    // }, false);
+
+    //addEventListener
+    // document.getElementById('home').addEventListener('click', () => {
+    //     console.log('Home clicked again');
+    // }, false); //default is false
+    //output: (Event Propagation) Bubbling Event
+    // Home clicked again (first inner element clicked)
+    // clicked inside the ul (then outer element)
+
+    //Capturing (make false to true) ul to li
+    // document.getElementById('home').addEventListener('click', () => {
+    //     console.log('Home clicked again');
+    // }, true); //default is false
+    // output:
+    // clicked inside the ul (first outer element)
+    // Home clicked again (then inner element) 
+
+
+    //stopPropagation()
+    // document.getElementById('home').addEventListener('click', (e) => {
+    //     console.log('Home clicked again');
+    //     e.stopPropagation();
+    // }, false); 
+    //output: Home clicked again (only home clicked stop bubbling)
+
+    //preventDefault()
+    // document.getElementById('google').addEventListener('click', function(e) { //e is event object
+    //     e.preventDefault(); //do not redirect to google.com we prevent that
+    //     e.stopPropagation();
+    //     console.log("Google Clicked!");
+    // }, false);
+    // //output: Google Clicked!
+
+
+
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        // console.log(e);
+        // console.log(e.target); //give target element
+        // console.log(e.target.parentNode); //give parent node
+
+        console.log(e.target.tagName);
+        //if the tag name is img then remove the image
+        if(e.target.tagName == 'IMG'){
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+        // removeIt.parentNode.removeChild(removeIt); //same as remove()
+    }, false);
+</script>
+</html>
