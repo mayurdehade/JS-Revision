@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout | clearTimeout</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHello = function() {
+        console.log("Hello World!");
+    }
+    const changeText = function() {
+        document.querySelector('h1').innerHTML = "Hello Mayur";
+    }
+    //set time out function store in variable (reference)
+    const changeMe = setTimeout(sayHello, 2000);
+
+    //clearTimeout (stop timeout before execution)
+    document.querySelector("#stop").addEventListener('click', () => {
+        clearTimeout(changeMe);
+        console.log("STOPPED");
+    })
+</script>
+</html>  
